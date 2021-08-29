@@ -33,7 +33,7 @@ export CC="你的 gcc 7 路徑" #which gcc 就可以看到 gcc 7 路徑了
 export CXX="你的 g++ 7 路徑" #which g++ 就可以看到 g++ 7 路徑了
 
 #you can change /opt/llvm to the path you want to install llvm
-cmake3 -G Ninja -DCMAKE_BUILD_TYPE="Release" \ 
+sudo cmake3 -G Ninja -DCMAKE_BUILD_TYPE="Release" \
 -DBUILD_SHARED_LIBS=True -DLLVM_USE_SPLIT_DWARF=True \
 -DCMAKE_INSTALL_PREFIX="/opt/llvm" \
 -DLLVM_OPTIMIZED_TABLEGEN=True -DLLVM_BUILD_TESTS=False \
@@ -42,5 +42,5 @@ cmake3 -G Ninja -DCMAKE_BUILD_TYPE="Release" \
 -DLLVM_TARGETS_TO_BUILD="RISCV" \
 ../llvm
 
-cmake --build . --target install
+sudo cmake --build . --target install
 popd
